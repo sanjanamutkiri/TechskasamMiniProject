@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Diet Recommendation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script>
+        function showForm() {
+            document.getElementById("diet-form").style.display = "block";
+            document.getElementById("get-plan-btn").style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <nav>
+        <h1>🌿 Health Diet Recommendation</h1>
+    </nav>
+<br><br><br>
+    <div class="container">
+        <div class="health-tips">
+            <h2>💡 Yale Health Tips</h2>
+            <ul>
+                <li>🥗 Start your day with a balanced meal.</li>
+                <li>🚶 Exercise regularly to stay fit.</li>
+                <li>💧 Drink enough water daily.</li>
+                <li>😴 Get at least 7-8 hours of sleep.</li>
+                <li>🍏 Eat more fruits and vegetables.</li>
+            </ul>
+        </div>
+
+        <button id="get-plan-btn" onclick="showForm()">Get My Today's Plan</button>
+
+        <div id="diet-form" style="display: none;">
+            <h2>Health Diet Recommendation System</h2>
+            <form action="/recommend" method="post">
+                <label for="age">Age:</label>
+                <input type="number" name="age" required>
+
+                <label for="gender">Gender:</label>
+                <select name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="weight">Weight (kg):</label>
+                <input type="number" name="weight" required>
+
+                <label for="height">Height (cm):</label>
+                <input type="number" name="height" required>
+
+                <label for="activity">Activity Level:</label>
+                <select name="activity">
+                    <option value="1.2">Sedentary</option>
+                    <option value="1.375">Lightly Active</option>
+                    <option value="1.55">Moderately Active</option>
+                    <option value="1.725">Very Active</option>
+                    <option value="1.9">Super Active</option>
+                </select>
+
+                <button type="submit">Get Diet Plan</button>
+            </form>
+        </div>
+    </div>
+
+
+
+
+      <!-- Healthy Food Section -->
+      <div id="healthy-food-section">
+        <h2>🍎 Healthy Food Recipes</h2>
+        <div class="food-grid">
+            <div class="food-item">
+                <img src="{{ url_for('static', filename='images/avocado_toast.jpg') }}" alt="Avocado Toast">
+                <h3>Avocado Toast 🥑</h3>
+                <p>Toast whole-grain bread, top with mashed avocado, add salt & pepper.</p>
+            </div>
+
+            <div class="food-item">
+                <img src="{{ url_for('static', filename='images/oatmeal_bowl.jpg') }}" alt="Oatmeal Bowl">
+                <h3>Oatmeal Bowl 🍚</h3>
+                <p>Cook oats with milk, add honey, nuts, and fresh fruits.</p>
+            </div>
+
+            <div class="food-item">
+                <img src="{{ url_for('static', filename='images/green_smoothie.jpg') }}" alt="Green Smoothie">
+                <h3>Green Smoothie 🍃</h3>
+                <p>Blend spinach, banana, yogurt, and chia seeds for a healthy smoothie.</p>
+            </div>
+
+            <div class="food-item">
+                <img src="{{ url_for('static', filename='images/greek_salad.jpg') }}" alt="Greek Salad">
+                <h3>Greek Salad 🥗</h3>
+                <p>Mix cucumber, tomatoes, olives, and feta cheese. Drizzle with olive oil.</p>
+            </div>
+
+            <div class="food-item">
+                <img src="{{ url_for('static', filename='images/quinoa_bowl.jpg') }}" alt="Quinoa Bowl">
+                <h3>Quinoa Bowl 🍚</h3>
+                <p>Cook quinoa and add grilled chicken, spinach, and lemon dressing.</p>
+            </div>
+
+            <div class="food-item">
+                <img src="{{ url_for('static', filename='images/grilled_salmon.jpg') }}" alt="Grilled Salmon">
+                <h3>Grilled Salmon 🐟</h3>
+                <p>Grill salmon with lemon, garlic, and herbs. Serve with steamed veggies.</p>
+            </div>
+
+            <div class="food-item">
+                <img src="{{ url_for('static', filename='images/fruit_yogurt.jpg') }}" alt="Fruit Yogurt">
+                <h3>Fruit Yogurt 🍓</h3>
+                <p>Mix Greek yogurt with fresh berries and a drizzle of honey.</p>
+            </div>
+
+            <div class="food-item">
+                <img src="{{ url_for('static', filename='images/chia_pudding.jpg') }}" alt="Chia Pudding">
+                <h3>Chia Pudding 🍮</h3>
+                <p>Soak chia seeds in almond milk overnight. Top with fruits.</p>
+            </div>
+
+            <div class="food-item">
+                <img src="{{ url_for('static', filename='images/banana.jpg') }}" alt="Banana & Oatmeal Protein Shake">
+                <h3>Banana & Oatmeal Protein Shake</h3>
+                <p>Rich in fiber and protein, this shake is perfect for a morning boost or post-workout recovery.</p>
+            </div>
+            
+        </div>
+    </div>
+</body>
+</html>

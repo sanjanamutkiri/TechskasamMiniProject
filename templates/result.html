@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Diet Plan</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+   
+    <div class="container">
+        <h2>Your Daily Diet Plan</h2>
+        <p><strong>Daily Caloric Requirement:</strong> {{ daily_calories }} kcal</p>
+        <table border="1" style="width: 100%; margin-top: 20px;">
+            <tr>
+                <th>Meal</th>
+                <th>Food</th>
+                <th>Calories</th>
+            </tr>
+            {% for meal in meals %}
+            <tr>
+                <td>{{ meal["Meal"] }}</td>
+                <td>{{ meal["Food"] }}</td>
+                <td>{{ meal["Calories"] }} kcal</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <br>
+        <a href="/">Go Back</a>
+    </div>
+</body>
+</html>
